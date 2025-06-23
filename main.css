@@ -1,0 +1,142 @@
+/* Import Google Fonts - Fraunces and Montserrat as specified in style guide */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap");
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Define color variables as per style guide */
+:root {
+  --green-500: hsl(158, 36%, 37%);
+  --green-700: hsl(158, 42%, 18%);
+  --black: hsl(212, 21%, 14%);
+  --grey: hsl(228, 12%, 48%);
+  --cream: hsl(30, 38%, 92%);
+  --white: hsl(0, 0%, 100%);
+}
+
+/* Mixins */
+/* Set base styles for body */
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--cream);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container wrapper with responsive margin */
+.container {
+  margin: 1rem;
+  max-width: 600px;
+}
+
+/* Product card main container */
+.pr-card {
+  background-color: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Product image container and responsive image */
+.img-container img {
+  width: 100%;
+  display: block;
+  content: url("./images/image-product-mobile.jpg");
+}
+
+/* Product information section padding */
+.pr-info {
+  padding: 1.5rem;
+}
+
+/* Product category text styling */
+.pr-type {
+  color: var(--grey);
+  font-size: 0.8rem;
+  letter-spacing: 5px;
+}
+
+/* Product name styling using Fraunces font */
+.pr-name {
+  font-family: "Fraunces", serif;
+  font-size: 2rem;
+  line-height: 1;
+  margin: 1rem 0;
+  color: var(--black);
+}
+
+/* Product description using 14px as specified in style guide */
+.pr-desc {
+  font-size: 14px;
+  color: var(--grey);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Price container with flex layout */
+.pr-price {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Current price styling using Fraunces font */
+.cr-price {
+  font-family: "Fraunces", serif;
+  font-size: 2rem;
+  color: var(--green-500);
+}
+
+/* Previous price styling with strikethrough */
+.pre-price {
+  color: var(--grey);
+  font-size: 0.8rem;
+  text-decoration: line-through;
+}
+
+/* Add to cart button styling */
+.btn {
+  width: 100%;
+  border: none;
+  background-color: var(--green-500);
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.btn:hover {
+  background-color: var(--green-700);
+}
+.btn img {
+  content: url("./images/icon-cart.svg");
+}
+.btn span {
+  color: var(--white);
+  font-weight: 700;
+}
+
+/* Desktop layout styles (1440px as per style guide) */
+@media (min-width: 600px) {
+  .pr-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .img-container img {
+    content: url("./images/image-product-desktop.jpg");
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .pr-info {
+    padding: 2rem;
+  }
+}/*# sourceMappingURL=main.css.map */
